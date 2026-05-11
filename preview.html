@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cláusula Sólida — Início</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=9.0">
+    <style>
+        /* ESTILOS DE EMERGÊNCIA - SOLUÇÃO FINAL */
+        .theme-toggle {
+            width: 50px !important;
+            height: 50px !important;
+            border-radius: 50% !important;
+            border: 2px solid #10b981 !important;
+            background: rgba(255, 255, 255, 0.1) !important;
+            cursor: pointer !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            position: relative !important;
+            transition: all 0.3s ease !important;
+            backdrop-filter: blur(10px) !important;
+        }
+
+        .theme-toggle svg {
+            width: 26px !important;
+            height: 26px !important;
+            transition: all 0.4s ease !important;
+        }
+
+        /* MOSTRAR APENAS UM DE CADA VEZ */
+        .sun-icon { display: block !important; color: #fbbf24 !important; fill: #fbbf24 !important; }
+        .moon-icon { display: none !important; color: #10b981 !important; }
+
+        /* MODO ESCURO */
+        .dark-mode .sun-icon { display: none !important; }
+        .dark-mode .moon-icon { display: block !important; }
+        
+        .dark-mode .theme-toggle { background: rgba(15, 23, 42, 0.8) !important; }
+    </style>
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+</head>
+<body>
+    <div class="cursor-follower" id="cursor-follower"></div>
+    
+    <header class="cabecalho" id="cabecalho">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">CS</div>
+                <span>Cláusula Sólida</span>
+            </a>
+            <button class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </button>
+            <nav>
+                <ul class="nav-lista" id="nav-lista">
+                    <button class="fechar-menu-mobile" id="fechar-menu-mobile" aria-label="Fechar menu">&times;</button>
+<li><a href="index.html" class="active">Início</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="portfolio.html">Portfólio</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <button id="theme-toggle" class="theme-toggle">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"></path></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"></path></svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="hero-conteudo container">
+                <div class="hero-badge animar">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    Especialistas em Resultados Tangíveis
+                </div>
+                <h1 class="animar">Eventos que Marcam, <br><span class="texto-gradiente">Publicidade que Vende</span></h1>
+                <p class="hero-subtitulo animar">Combinamos criatividade estratégica com execução impecável para elevar a sua marca ao próximo nível.</p>
+                <div class="hero-acoes animar">
+                    <a href="contacto.html" class="btn btn-primario glow-effect">Iniciar Projeto</a>
+                    <a href="servicos.html" class="btn btn-secundario">Explorar Serviços</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao-branca">
+            <div class="container">
+                <div class="titulo-secao animar">
+                    <span class="subtitulo">Diferenciais</span>
+                    <h2>O que nos torna Sólidos</h2>
+                    <div class="linha-decorativa"></div>
+                </div>
+                <div class="grelha-beneficios">
+                    <div class="beneficio-card animar">
+                        <div class="beneficio-icone"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                        <h3>Segurança e Rigor</h3>
+                        <p>Cumprimos prazos e orçamentos com transparência total em cada etapa do projeto.</p>
+                    </div>
+                    <div class="beneficio-card animar">
+                        <div class="beneficio-icone"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+                        <h3>Design Inovador</h3>
+                        <p>A nossa equipa criativa foca-se em tendências globais para criar conceitos únicos.</p>
+                    </div>
+                    <div class="beneficio-card animar">
+                        <div class="beneficio-icone"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                        <h3>Impacto Mensurável</h3>
+                        <p>Não fazemos apenas "bonito", focamo-nos em ROI e alcance real para o seu negócio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao-colorida">
+            <div class="container">
+                <div class="titulo-secao animar">
+                    <span class="subtitulo">Metodologia</span>
+                    <h2>Como Construímos o Sucesso</h2>
+                </div>
+                <div class="passos-processo">
+                    <div class="passo animar">
+                        <div class="passo-numero">01</div>
+                        <div class="passo-conteudo">
+                            <h3>Imersão e Briefing</h3>
+                            <p>Entendemos a fundo os seus objetivos e o ADN da sua marca.</p>
+                        </div>
+                    </div>
+                    <div class="passo animar">
+                        <div class="passo-numero">02</div>
+                        <div class="passo-conteudo">
+                            <h3>Conceito e Estratégia</h3>
+                            <p>Desenhamos uma solução personalizada e estratégica.</p>
+                        </div>
+                    </div>
+                    <div class="passo animar">
+                        <div class="passo-numero">03</div>
+                        <div class="passo-conteudo">
+                            <h3>Produção e Entrega</h3>
+                            <p>Executamos com rigor técnico e atenção extrema ao detalhe.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-final animar">
+            <div class="container">
+                <div class="cta-caixa-vidro">
+                    <h2>Pronto para elevar a sua marca?</h2>
+                    <p>Vamos conversar sobre o seu próximo grande evento ou campanha.</p>
+                    <a href="contacto.html" class="btn btn-primario glow-effect">Falar com um Especialista</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <div class="rodape-inferior">
+                <p>&copy; 2026 Cláusula Sólida, Lda. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js?v=9.0" defer></script>
+</body>
+</html>
+

@@ -1,0 +1,20 @@
+# =====================================================
+# Cláusula Sólida — robots.txt
+# https://www.clausulasolida.pt/robots.txt
+# =====================================================
+
+# Permitir acesso a todos os crawlers
+User-agent: *
+Allow: /
+
+# Bloquear ficheiros e pastas sensíveis
+Disallow: /db_config.php
+Disallow: /processar_contacto.php
+Disallow: /sql/
+Disallow: /includes/
+Disallow: /sections/
+Disallow: /assets/private/
+Disallow: /temp/
+
+# Localização do Sitemap
+Sitemap: https://www.clausulasolida.pt/sitemap.xml
