@@ -396,8 +396,9 @@ body.dark-mode .theme-toggle .sun-icon {
   transform: rotate(-45deg) translate(5px, -5px)
 }
 
-.menu-toggle.ativo span {
-  background: #ffffff !important;
+.menu-toggle.ativo {
+  opacity: 0;
+  visibility: hidden;
 }
 
 /* --- HERO --- */
