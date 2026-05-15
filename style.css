@@ -1653,6 +1653,10 @@ body.dark-mode .portfolio-conteudo-vidro {
   }
 }
 
+.fechar-menu-mobile {
+  display: none;
+}
+
 /* --- RESPONSIVO --- */
 @media(max-width:992px) {
 
