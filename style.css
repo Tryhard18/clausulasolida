@@ -1495,22 +1495,29 @@ body.dark-mode .redes-sociais a {
   z-index: 1;
 }
 
-.portfolio-grid {
+.portfolio-bento {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 350px;
+  gap: 1.5rem;
 }
+
+.bento-item-1 { grid-column: span 2; }
+.bento-item-2 { grid-column: span 1; grid-row: span 2; } /* Tall item */
+.bento-item-3 { grid-column: span 1; }
+.bento-item-4 { grid-column: span 1; }
+.bento-item-5 { grid-column: span 2; }
+.bento-item-6 { grid-column: span 1; }
 
 .portfolio-item {
   position: relative;
-  border-radius: 12px;
+  border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   background: var(--cor-fundo-claro);
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  aspect-ratio: 4/5;
-  /* Aspect ratio vertical para elegância em linha única */
+  height: 100%;
 }
 
 
@@ -1636,20 +1643,27 @@ body.dark-mode .portfolio-conteudo-vidro {
   transform: translate(5px, -5px);
 }
 
-/* Responsividade do Portfólio */
-@media(max-width: 1200px) {
-  .portfolio-grid {
+/* Responsividade do Portfólio Bento */
+@media(max-width: 1024px) {
+  .portfolio-bento {
     grid-template-columns: repeat(2, 1fr);
   }
+  .bento-item-1 { grid-column: span 2; }
+  .bento-item-2 { grid-column: span 1; grid-row: span 1; }
+  .bento-item-3 { grid-column: span 1; }
+  .bento-item-4 { grid-column: span 2; }
+  .bento-item-5 { grid-column: span 1; }
+  .bento-item-6 { grid-column: span 1; }
 }
 
-@media(max-width: 640px) {
-  .portfolio-grid {
+@media(max-width: 768px) {
+  .portfolio-bento {
     grid-template-columns: 1fr;
+    grid-auto-rows: 350px;
   }
-
   .portfolio-item {
-    aspect-ratio: 1/1;
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
   }
 }
 
@@ -2039,8 +2053,6 @@ main > section:first-child:not(.hero) {
 
 .beneficio-card:hover {
     transform: translateY(-10px);
-    box-shadow: var(--sombra-hover);
-    border-color: var(--cor-secundaria);
 }
 
 .beneficio-icone {
